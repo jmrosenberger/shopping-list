@@ -21,4 +21,29 @@ const shoppingList = [
     }
 ]
 
-console.log(shoppingList);
+// console.log(shoppingList);
+
+const toiletPaper = {
+        name: "toilet paper",
+        price: 10.00
+};
+
+
+const addToShoppingList = (listItem) => {
+    const lastIndex = shoppingList.length - 1
+    const currentLastListItem = shoppingList[lastIndex]
+    // const maxId = currentLastListItem.id
+    const idForNewListItem = currentLastListItem.id + 1
+
+    listItem.id = idForNewListItem
+    shoppingList.push(listItem)
+}
+
+addToShoppingList(toiletPaper)
+
+console.log(shoppingList)
+
+for (const listItem of shoppingList) {
+    console.log(shoppingList)
+    
+}
