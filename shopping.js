@@ -7,13 +7,8 @@ const shoppingList = [
         store: "publix",
         section: "dairy",
         frequency: 7,
-        brand: "publix",
-        dateCreated: function() {
-            const date = new Date();
-            const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-            const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            return (shoppingList.dateCreated(currentDate))
-        }
+        brand: "publix"
+        
     },
     {
         id: 2,
@@ -23,13 +18,8 @@ const shoppingList = [
         store: "publix",
         section: "dairy",
         frequency: 7,
-        brand: "publix",
-        dateCreated: function() {
-            const date = new Date();
-            const [ month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-            const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            return (shoppingList.dateCreated(currentDate))
-        }
+        brand: "publix"
+        
     },
     {
         id: 3,
@@ -39,13 +29,8 @@ const shoppingList = [
         store: "publix",
         section: "frozen foods",
         frequency: 7,
-        brand: "publix",
-        dateCreated: function() {
-            const date = new Date();
-            const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-            const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            return (shoppingList.dateCreated(currentDate))
-        }
+        brand: "publix"
+        
     },
     {
         id: 4,
@@ -55,13 +40,7 @@ const shoppingList = [
         store: "publix",
         section: "misc",
         frequency: 7,
-        brand: "publix",
-        dateCreated: function() {
-            const date = new Date();
-            const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-            const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            return (shoppingList.dateCreated(currentDate))
-        }
+        brand: "publix"
     }
 ]
 
@@ -73,28 +52,49 @@ const toiletPaper = {
         store: "publix",
         section: "paper goods",
         frequency: 7,
-        brand: "publix",
-        dateCreated: function() {
-            const date = new Date();
-            const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-            const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-            return (shoppingList.dateCreated(currentDate))
-        }
+        brand: "publix"
     };
-    
 
-const addToShoppingList = (listItem) => {
-    const lastIndex = shoppingList.length - 1
-    const currentLastListItem = shoppingList[lastIndex]
-    const maxId = currentLastListItem.id
-    const idForNewListItem = maxId + 1
 
-    listItem.id = idForNewListItem
-    shoppingList.push(listItem)
-    
+const trashBags = {
+    name: "trash bags",
+    price: 12.00,
+    quantity: 2,
+    store: "publix",
+    section: "house",
+    frequency: 7,
+    brand: "Hefty"
 }
+    
+    
+    const addToShoppingList = (listItem) => {
+        const lastIndex = shoppingList.length - 1
+        const currentLastListItem = shoppingList[lastIndex]
+        const maxId = currentLastListItem.id
+        const idForNewListItem = maxId + 1
+        
+        listItem.id = idForNewListItem
+        listItem.dateCreated = Date();
+        shoppingList.push(listItem)     
+    }
+    
+     
+        
+    
+    
+    
+    
+    
+    
+    addToShoppingList(toiletPaper)
+    addToShoppingList(trashBags)
 
-addToShoppingList(toiletPaper)
+
+
+
+
+
+
 
 for (const listItem of shoppingList) {
     console.log(`The ${listItem.name} cost $${listItem.price} and can be
