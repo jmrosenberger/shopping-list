@@ -103,3 +103,14 @@ for (const listItem of shoppingList) {
 
 console.log(shoppingList)
 
+
+
+for (const listItem of shoppingList) {
+    if (listItem.price > 8.00) {
+        console.log(`Might need to wait to buy ${listItem.name}. It costs too much.`)
+    } else if (listItem.price <= 8.00) {
+        console.log(`${listItem.name} is ok to purchase this week.`)
+    } else {
+        console.log("Don't worry about shopping, there's nothing I need or can afford.")
+    }
+}
